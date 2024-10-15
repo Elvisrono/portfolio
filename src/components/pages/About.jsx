@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import elvoh from "../../assets/images/elvoh.jpg";
 import { AiOutlineUser } from "react-icons/ai";
-import { FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaGraduationCap, FaPhone } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa6";
 import {
   SiBootstrap,
@@ -183,24 +183,147 @@ const About = () => {
             <div className="text-lg md:pl-10 pl-0 mt-12 xl:mt-8">
               <div>
                 {activeTab === "personal" && (
-                    <div>
-                        <h3>Unmatched Service for over 2 years</h3>
-                        <p>I specialize in building, creating and developing user friendly websites</p>
-                        <div>
+                    <div className="text-center xl:text-left">
+                        <h3 className="text-2xl font-bold md:mb-2 mb-6">Unmatched Service for over 2 years</h3>
+                        <p className="md:p-2 md:mb-4 mb-8 ma-w-xl mx-auto xl:mx-0">I specialize in building, creating and developing user friendly websites</p>
+                        {/* icons and text */}
+                        <div className="grid xl:grid-cols-2 gap-4 mb-6">
                             {infoData.map((item,index) =>(
-                                <div key={index}>
-                                    <div>{item.icon}</div>
+                                <div key={index} className="flex gap-x-4 mx-auto xl:mx-0">
+                                    <div className="text-teal-500">{item.icon}</div>
                                     <div>{item.text}</div>
                                 </div>
                             ))}
                         </div>
                         <div>
-                            <div>Language Skill</div>
-                            <div></div>
+                            <div className="flex flex-col gap-y-2">Language Skill</div>
+                            <div className="border-b border-black"></div>
                             <div>English and Kiswahili</div>
                         </div>
                     </div>
                 
+                )}
+                {/* qualifications */}
+                {activeTab === "qualifications" && (
+                  <div>
+                    <h3 className="tex-2xl font-bold mb-6 text-headingColor text-center xl:text-left">My Journey</h3>
+                    <div>
+                      <div>
+                        <div>
+                          <FaBriefcase size={28}/>
+                          <h4>Experience</h4>
+                        </div>
+                        {/* experience list */}
+                        <div className="flex flex-col gap-8">
+                          {qualificationData
+                            .find((item) => item.title === "experience")
+                            .data.map((item, index) => (
+                              <div className="flex items-center gap-4" key={index}>
+                                <div className="h-1 w-1 bg-teal-300"></div>
+                                <div>
+                                  <div className="font-semibold mb-2 text-2xl text-smallTextColor leading-none">
+                                    {item.company}
+                                  </div>
+                                  <div className="text-lg mb-2 leading-none text-gray-900">
+                                    {item.role}
+                                  </div>
+                                  <div className="text-base font-medium">
+                                    {item.years}
+                                  </div>
+                                </div>
+                              </div>
+                            ))
+                          }
+                        </div>
+                      </div>
+                      {/* education */}
+                      <div className="flex flex-col gap-6">
+                        <div className="flex items-center gap-4 text-primary">
+                          <FaGraduationCap size={28} />
+                          <h4 className="capitalized text-3xl underline text-headingColor">Education</h4>
+                        </div>
+                        {/* list */}
+                        <div className="flex flex-col gap-8">
+                          {qualificationData
+                            .find((item) => item.title === "education")
+                            .data.map((item, index) => (
+                              <div className="flex items-center gap-4" key={index}>
+                                <div className="h-1 w-1 bg-teal-800"></div>
+                                <div>
+                                  <div className="font-bold mb-2 text-smallTextColor text-xl leading-none">
+                                    {item.university}
+                                  </div>
+                                  <div className="text-lg mb-2 leading-none">
+                                    {item.qualification}
+                                  </div>
+                                  <div className="text-base font-medium">
+                                    {item.years}
+                                  </div>
+                                </div>
+                              </div>
+                            ))
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* skills */}
+                {activeTab === "skills" && (
+                  <div className="text-center xl:text-left">
+                    <h3 className="text-2xl text-headingColor font-bold mb-8">
+                      What I explore
+                    </h3>
+                    {/* skills */}
+                    <div className="mb-4">
+                      <h4 className="text-3xl text-left font-semibold">Skills</h4>
+                      <div className="border-b border-black mb-4"></div>
+                      {/* skills list */}
+                      <div>
+                        {skillData
+                          .find((item) => item.title === "skills")
+                          .data.map((item, index) => (
+                            <div className="flex p-1 gap-5">
+                              <div className="font-bold text-teal-600">
+                                {item.category}
+                              </div>
+                              <div className="w-2 text-center mb-3 md:mb-1 xl:text-left mx-auto xl:mx-0" key={index}>
+                                <div className="font-medium">
+                                  {item.frontend}
+                                </div>
+                                <div className="font-medium">
+                                  {item.backend}
+                                </div>
+                                <div className="font-medium">
+                                  {item.others}
+                                </div>
+                              </div>
+                            </div>
+                          ))
+
+                        }
+                      </div>
+                    </div>
+                    {/* tools */}
+                    <div>
+                      <h4 className="text-3xl font-semibold mb-2 text-left">Tools</h4>
+                      <div className="border-b border-black mb-4"></div>
+                      {/* list */}
+                      <div className="flex flex-wrap justify-center xl:justify-start">
+                        {skillData
+                          .find((item) => item.title === "tools")
+                          .data.map((item, index) => (
+                            <div className="w-1/7 mb-10 px-4" key={index}>
+                              <div className="text-4xl">
+                                {item.icon}
+                              </div>
+                            </div>
+                          ))
+                        }
+                      </div>
+                    </div>
+                  </div>
                 )}
                 
               </div>
