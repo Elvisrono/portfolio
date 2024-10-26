@@ -3,7 +3,7 @@ import elvoh from '../../assets/images/elvoh.jpg'
 
 const Hero = () => {
   return (
-    <section className='md:pt-16  pt-4  min-h-screen' id='home'>
+    <section className='container md:pt-16  pt-4  min-h-screen' id='home'>
         <div className='w-full md:basis-2/3'>
             <p 
                 data-aos='fade-right'
