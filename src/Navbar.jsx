@@ -1,9 +1,37 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const Navbar = () => {
 
     const headerRef = useRef(null)
     const menuRef = useRef(null)
+
+    const stickyHeaderFunc = () => {
+        window.addEventListener('scroll', () =>{
+            if(document.body.scrollTop > 70 || document.documentElement.scrollTop > 70){
+                headerRef.current.classList.add("sticky_header")
+            }else{
+                headerRef.current.classList.remove("sticky_header")
+            }
+        })
+    }
+
+
+    useEffect(() =>{
+        stickyHeaderFunc()
+        return window.removeEventListener("scroll", stickyHeaderFunc)
+    },[])
+    const handleClick = e => {
+        e.preventDefault()
+        const targetAttr = e.target.getAttribute("href")
+        const location = document.querySelector(targetAttr).offsetTop
+
+        window.scrollTo({
+            top: location - 70,
+            left: 0,
+        })
+    }
+
+    const toggleMenu = () => menuRef.current.classList.toggle('show_menu')
 
   return (
     <header ref={headerRef} className='w-full h-[80px] flex items-center'>
@@ -21,19 +49,19 @@ const Navbar = () => {
                 <div>
                     <ul className='flex items-center gap-10'>
                         <li>
-                            <a href="">Home</a>
+                            <a onClick={handleClick} className='text-smallTextColor font-[600]' href="#home">Home</a>
                         </li>
                         <li>
-                            <a href="">About</a>
+                            <a onClick={handleClick} className='text-smallTextColor font-[600]' href="#about">About</a>
                         </li>
                         <li>
-                            <a href="">Services</a>
+                            <a onClick={handleClick} className='text-smallTextColor font-[600]' href="#services">Services</a>
                         </li>
                         <li>
-                            <a href="">Portfolio</a>
+                            <a onClick={handleClick} className='text-smallTextColor font-[600]' href="#portfolio">Portfolio</a>
                         </li>
                         <li>
-                            <a href="">Contact</a>
+                            <a onClick={handleClick} className='text-smallTextColor font-[600]' href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -42,6 +70,9 @@ const Navbar = () => {
                     <a href="" className='flex items-center gap-2 text-smallTextColor font-[600] border border-solid border-smallTextColor py-2 px-4 rounded-[8px] max-h-[40px] hover:bg-smallTextColor hover:text-white hover:font-[500] ease-in duration-300'>
                         <i class='ri-send-plane-line'></i> let's talk
                     </a>
+                    <span onClick={toggleMenu} className="text-2xl text-smallTextColor md:hidden cursor-pointer">
+                        <i class= "ri-menu-line"></i>
+                    </span>
                 </div>
 
             </div>

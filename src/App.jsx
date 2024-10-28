@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 import Hero from './components/pages/Hero'
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
+import Footer from './components/Footer/Footer';
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
           <About />
           <Contact />
         </main>
+        <Footer />
       </div>
   )
 }
