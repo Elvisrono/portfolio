@@ -34,8 +34,8 @@ const Navbar = () => {
     const toggleMenu = () => menuRef.current.classList.toggle('show_menu')
 
   return (
-    <header ref={headerRef} className='w-full h-[80px] flex items-center'>
-        <div className='container'>
+    <header ref={headerRef} className='w-full h-[80px] flex items-center '>
+        <div className='container '>
             <div className='flex items-center justify-between'>
                 {/* logo */}
                 <div className='flex items-center gap-[10px]'>
@@ -46,7 +46,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div>
+                <div >
                     <ul className='flex items-center gap-10'>
                         <li>
                             <a onClick={handleClick} className='text-smallTextColor font-[600]' href="#home">Home</a>

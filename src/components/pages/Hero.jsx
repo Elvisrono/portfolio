@@ -23,7 +23,10 @@ const Hero = () => {
               <span>
                 <i class="ri-apps-2-line"></i>
               </span>
-              I'm a seasoned, certified software Engeener.
+              I am a Software Engineer experienced in developing robust web applications and improving user experiences. 
+              Expertise in Python, Django, and React. Spearheaded the redesign of the company’s main product, 
+              boosting customer satisfaction scores. Excited to bring my commitment to innovative problem-solving
+              and user-centric design to a cutting-edge tech firm.
             </p>
 
             <div className="flex items-center gap-7 mt-7">

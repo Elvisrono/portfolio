@@ -44,7 +44,7 @@ const Contact = () => {
   return (
     <section id="contact" className="pb-16 ">
       <div className="container">
-        <h2 className="text-headingColor text-center font-[700] text-2[2.5rem] mb-8">
+        <h2 className="text-headingColor text-center font-[800] text-[2.5rem] mb-8">
           Get In Touch
         </h2>
         <div className="md:flex justify-between items-center">

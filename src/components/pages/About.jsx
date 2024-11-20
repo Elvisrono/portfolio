@@ -45,7 +45,7 @@ const qualificationData = [
         years: "2021-2023",
       },
       {
-        university: "MKU",
+        university: "Mount Kenya University",
         qualification: "Information Technology",
         years: "2019-2022",
       },
@@ -61,7 +61,7 @@ const qualificationData = [
       },
       {
         company: "Tech Alpha",
-        role: "Web DEveloper Intern",
+        role: "Web Developer Intern",
         years: "2024-2024",
       },
     ],
@@ -78,7 +78,7 @@ const skillData = [
       },
       {
         category: "Backend",
-        backend: "Python, Ruby, Ruby on Rails",
+        backend: "Python, Ruby, Ruby on Rails, Django",
       },
       {
         category: "Other",
@@ -185,11 +185,11 @@ const About = () => {
                 {activeTab === "personal" && (
                     <div className="text-center xl:text-left">
                         <h3 className="text-2xl font-bold md:mb-2 mb-6">Unmatched Service for over 2 years</h3>
-                        <p className="md:p-2 md:mb-4 mb-8 ma-w-xl mx-auto xl:mx-0">I specialize in building, creating and developing user friendly websites</p>
+                        <p className="md:p-2 md:mb-4 mb-8 max-w-xl mx-auto xl:mx-0">I specialize in building, creating and developing user friendly websites</p>
                         {/* icons and text */}
                         <div className="grid xl:grid-cols-2 gap-4 mb-6">
                             {infoData.map((item,index) =>(
-                                <div key={index} className="flex gap-x-4 mx-auto xl:mx-0">
+                                <div key={index} className="flex gap-x-4 mx-aut xl:mx-0">
                                     <div className="text-teal-500">{item.icon}</div>
                                     <div>{item.text}</div>
                                 </div>
@@ -207,11 +207,11 @@ const About = () => {
                 {activeTab === "qualifications" && (
                   <div>
                     <h3 className="tex-2xl font-bold mb-6 text-headingColor text-center xl:text-left">My Journey</h3>
-                    <div>
-                      <div>
-                        <div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="flex flex-col gap-6">
+                        <div className="flex items-center gap-4 text-primaryColor">
                           <FaBriefcase size={28}/>
-                          <h4>Experience</h4>
+                          <h4 className="capitalize text-3xl underline text-headingColor font-medium">Experience</h4>
                         </div>
                         {/* experience list */}
                         <div className="flex flex-col gap-8">
@@ -288,7 +288,7 @@ const About = () => {
                               <div className="font-bold text-teal-600">
                                 {item.category}
                               </div>
-                              <div className="w-2 text-center mb-3 md:mb-1 xl:text-left mx-auto xl:mx-0" key={index}>
+                              <div className="text-center mb-3 md:mb-1 xl:text-left mx-auto xl:mx-0" key={index}>
                                 <div className="font-medium">
                                   {item.frontend}
                                 </div>
